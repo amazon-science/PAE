@@ -1,0 +1,35 @@
+defaults:
+  - default
+  - _self_
+
+
+save_path: '/the/path/to/save/model/and/outputs' # the path to save the model checkpoint/trajectory_outputs
+# checkpoint_path: null
+checkpoint_path: "/the/path/to/saved/checkpoint/to/start" # the checkpoint to load the initial model
+
+actor_epochs: 0 # number of epochs to update the actor
+epochs: 0
+
+test_tasks: "/path/to/webvoyager_test_data.jsonl"
+
+evaluator_prompt_path: "prompts/evaluator_prompt.txt"
+
+parallel_option: "single"
+
+eval_at_start: True
+online: False
+
+env_config:
+  batch_size: 256
+  max_iter: 10
+  do_eval: True
+  aws_key_id: null
+  aws_secret_key: null
+
+# wandb logging
+use_wandb: True
+wandb_key: ""
+project_name: ''
+entity_name: ""
+run_name: 'llava-7b-webarena-test' # actually online
+

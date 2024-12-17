@@ -1,0 +1,55 @@
+defaults:
+  - default
+  - _self_
+
+save_path: '/the/path/to/save/model/and/outputs' # the path to save the model checkpoint/trajectory_outputs
+# checkpoint_path: null
+checkpoint_path: "/the/path/to/saved/checkpoint/to/start" # the checkpoint to load the initial model
+
+policy_lm:  "liuhaotian/llava-v1.6-mistral-7b" #"llava-hf/llava-1.5-7b-hf" #  
+
+algorithm: "filteredbc" 
+
+# agent
+grad_accum_steps: 32
+actor_trajectories: 1024 # number of trajectories randomly sampled to update the actor
+actor_epochs: 2 # number of epochs to update the actor
+epochs: 20
+
+rollout_size: 512
+train_tasks: "/path/to/tasks/webvoyager_pae.jsonl" jsonl" # the file that contains tasks for the environment
+test_tasks: "/path/to/tasks/webvoyager_test_data.jsonl" 
+evaluator_prompt_path: "prompts/evaluator_prompt.txt"
+safe_batch_size: 16
+
+env_config: 
+  batch_size: 256
+  max_iter: 10
+  use_webarena_eval: True
+  random_task: True
+  do_eval: True
+  aws_key_id: null
+  aws_secret_key: null
+
+save_freq: 1
+eval_freq: 1
+eval_at_start: True
+online: True
+# wandb logging
+use_wandb: True
+wandb_key: ""
+project_name: ''
+entity_name: ""
+run_name: 'llava-7b-rl-distributed-server'
+
+
+parallel_option: "host"
+worker_ips:
+ - "ec2-xx-xx-xx-xx.us-west-2.compute.amazonaws.com"
+ - "ec2-xx-xx-xx-xx.us-west-2.compute.amazonaws.com"
+ - "ec2-xx-xx-xx-xx.us-west-2.compute.amazonaws.com"
+
+host_run_path: "/home/ubuntu/llava_webagent"
+worker_run_path: "/home/ubuntu/llava_webagent"
+worker_username: "ubuntu"
+remote_timeout: 5400

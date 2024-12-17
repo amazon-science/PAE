@@ -1,0 +1,36 @@
+defaults:
+  - default
+  - _self_
+
+save_path: '/the/path/to/save/model/and/outputs' # the path to save the model checkpoint/trajectory_outputs
+checkpoint_path: null
+
+offline_data_path: "/path/to/webvoyager-claudezeroshot-all85websites"
+
+# agent
+actor_epochs: 2 # number of epochs to update the actor
+epochs: 16
+algorithm: "sft"
+
+rollout_size: 256
+test_tasks: "/path/to/webvoyager_test_data.jsonl"
+
+evaluator_prompt_path: "prompts/evaluator_prompt.txt"
+env_config:
+  batch_size: 256
+  max_iter: 10
+  use_webarena_eval: False
+  random_task: True
+
+save_freq: 4
+eval_freq: 4
+eval_at_start: False
+online: False
+
+# wandb logging
+use_wandb: True
+wandb_key: ""
+project_name: ''
+entity_name: ""
+run_name: 'llava-7b-sft' 
+

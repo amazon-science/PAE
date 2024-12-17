@@ -1,0 +1,47 @@
+defaults:
+  - _self_
+
+checkpoint_path: null
+
+policy_lm:  "liuhaotian/llava-v1.6-mistral-7b" # "liuhaotian/llava-v1.6-mistral-7b" #"llava-hf/llava-1.5-7b-hf" #  #needs to be consistent!
+use_lora: True
+train_vision: False
+
+
+# Sampling
+num_beams: 1
+max_new_tokens: 256
+temperature: 1.0
+
+offline_data_path: ""
+# offline_actor_iterations: 30
+train_algorithm: "bc" 
+
+# agent
+agent_name: "llava" 
+use_q4: False
+use_anyres: False
+zeroshot: False
+grad_accum_steps: 32
+epochs: 1
+
+rollout_size: 512
+safe_batch_size: 4
+reset_server: False
+env_config: 
+  batch_size: 256
+  max_iter: 10
+  random_task: True
+  do_eval: True
+  aws_key_id: null
+  aws_secret_key: null
+
+parallel_option: "worker"
+
+use_allrecipes: False
+save_freq: 4000
+eval_freq: 4000
+eval_at_start: False
+online: True
+# wandb logging
+use_wandb: False

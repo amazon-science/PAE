@@ -1,0 +1,50 @@
+checkpoint_path: null
+policy_lm:  "liuhaotian/llava-v1.6-mistral-7b" 
+use_lora: True
+train_vision: False
+
+
+# Sampling
+num_beams: 1
+max_new_tokens: 256
+temperature: 1.0
+
+offline_data_path: "" 
+# offline_actor_iterations: 30
+algorithm: "sft" 
+
+# agent
+agent_name: "llava" 
+use_q4: False
+use_anyres: False
+capacity: 500000
+lm_lr: 2e-5
+grad_accum_steps: 1
+actor_trajectories: 1024 # number of trajectories randomly sampled to update the actor
+actor_epochs: 0 # number of epochs to update the actor
+epochs: 0
+
+rollout_size: 256
+safe_batch_size: 8 # batch size while collecting roll-out data per GPU
+
+env_config:
+  batch_size: 256
+  max_iter: 10
+  do_eval: True
+  aws_key_id: null
+  aws_secret_key: null
+
+train_tasks: null # the file that contains tasks for the environment
+test_tasks: null
+
+parallel_option: "single"
+
+save_freq: 100
+eval_freq: 100
+eval_at_start: True
+online: True
+
+
+# wandb logging
+use_wandb: False
+
