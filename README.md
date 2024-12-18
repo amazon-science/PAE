@@ -1,7 +1,7 @@
 # Proposer-Agent-Evaluator (PAE): Autonomous Skill Discovery for Foundation Model Internet Agent
 
 <p align="center">
-| <a href="https://yanqval.github.io/PAE/"><b>Website | Demo | Results</b></a> | <a href="https://www.google.com/"><b>Paper</b></a> | <a href="https://huggingface.co/yifeizhou/pae-llava-7b"><b>Checkpoints</b></a> | <a href="https://huggingface.co/datasets/yifeizhou/pae-data"><b>Data</b></a> |
+| <a href="https://yanqval.github.io/PAE/"><b>Website | Demo | Results</b></a> | <a href="https://arxiv.org/abs/2412.13194"><b>Paper</b></a> | <a href="https://huggingface.co/yifeizhou/pae-llava-7b"><b>Checkpoints</b></a> | <a href="https://huggingface.co/datasets/yifeizhou/pae-data"><b>Data</b></a> |
 </p>
 
 ---
