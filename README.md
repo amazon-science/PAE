@@ -28,8 +28,8 @@ You need to first create a conda environment and install relevant python package
 conda create -n pae python==3.10
 conda activate pae
 
-git clone https://github.com/YifeiZhou02/llava_webagent -b release
-cd llava_webagent
+git clone https://github.com/amazon-science/PAE
+cd PAE
 
 # Install PAE
 pip install -e .
